@@ -10,19 +10,19 @@ or you can use class names with namespaces.
 
 Every request needs profile, which is either PayPalNVP\ApiSignature, or PayPalNVP\ApiCertificate. Most of the users use ApiSignature.
 
-<code>
+<pre>
 $profile = new ApiSignature('username', 'password', 'signature');
-</code>
+</pre>
 
 Request are sent (and responses set) using PayPalNVP\PayPalNVP object. Which takes profile and environment as arguments. Environment has only static constructors and acts as an enum.
 
-<code>
+<pre>
 $paypal = new PayPalNVP($profile, Environment::SANDBOX());
-</code>
+</pre>
 
 The rest of the code depends on what request you want to make. Set express checkout would look like this:
 
-<code>
+<pre>
 /* items with prices */
 $items = array();
 $items[] = PaymentItem::getRequest('10');
@@ -46,6 +46,6 @@ $nvpArray = $setECResponse->getResponse();
 /* to check if there are any errors with the submission */
 $errors = $setECResponse->getErrors();
 
-</code>
+</pre>
 
 All operations are very similar, they use main paypal object. You need to create an instance of a request (PayPalNVP/Request package) and response is set using setResponse method on PayPalNVP. All requests have getResponse() method which returns appropriate response.
