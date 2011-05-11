@@ -1,10 +1,10 @@
 This library is written in php 5.3 and uses namespaces.
 
-<code>
+<pre>
 use PayPalNVP\PayPalNVP,
     PayPalNVP\Profile\ApiSignature,
     ...
-</code>
+</pre>
 
 or you can use class names with namespaces.
 
