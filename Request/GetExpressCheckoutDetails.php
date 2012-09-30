@@ -40,7 +40,7 @@ final class GetExpressCheckoutDetails implements Request {
      */
     private $collection;
 
-	/** @var GetExpressCheckoutDetailsResponse */
+	  /** @var GetExpressCheckoutDetailsResponse */
     private $response;
 
     private static $allowedValues = array('METHOD', 'TOKEN', 'PAYERID');
@@ -64,18 +64,18 @@ final class GetExpressCheckoutDetails implements Request {
         }
 
         $this->collection = new Collection(self::$allowedValues, $response);
-		$this->collection->setValue('METHOD', self::$methodName);
-	}
+		    $this->collection->setValue('METHOD', self::$methodName);
+	  }
 
     public function getNVPRequest() {
-	 return $this->collection->getAllValues();
+	    return $this->collection->getAllValues();
     }
 
     public function setNVPResponse($nvpResponse, Environment $environment) {
-		$this->response = new GetExpressCheckoutDetailsResponse($nvpResponse, $environment);
+		  $this->response = new GetExpressCheckoutDetailsResponse($nvpResponse, $environment);
     }
 
     public function getResponse() {
-        return $this->response;
+      return $this->response;
     }
 }

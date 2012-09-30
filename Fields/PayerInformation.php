@@ -41,9 +41,9 @@ final class PayerInformation implements Field {
     private function __construct() { }
 
 	public static function getResponse(array $response) {
-
         $info = new self();
         $info->collection = new Collection(self::$allowedValues, $response);
+        return $info;
 	}
 
 	/**
